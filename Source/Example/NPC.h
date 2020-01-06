@@ -4,18 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Engine/Engine.h"
 #include "NPC.generated.h"
 
 UCLASS()
 class EXAMPLE_API ANPC : public ACharacter
 {
 	GENERATED_BODY()
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision)
-	TSubobjectPtr<Class USphereComponent> ProxSphere;
-
-	UFUNCTION(BlueprintNativeEvent, Categoty = "Collision")
-		void OnProxOverlabBegin(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool FromSweep, const FHitResult& SweepResult);
 
 public:
 	// Sets default values for this character's properties
@@ -34,5 +29,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NPCMessage)
 	FString NpcMessage;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision)
+	//TSubobjectPtr<Class USphereComponent> ProxSphere;
+
+	//UFUNCTION(BlueprintNativeEvent, Category = "Collision")
+	//void OnProxOverlabBegin(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool FromSweep, const FHitResult& SweepResult);
 
 };
